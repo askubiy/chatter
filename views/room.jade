@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  .container-fluid
+    .row
+      div.panel.panel-default
+        div.panel-heading Room name: #{room.name}
+        div.panel-body
+          .message-container
+            ul#messages
+      form(action="", id="message-form", class="form" role="form")
+        .row-fluid
+          .col-xs-10.col-sm-11.col-md-11.col-lg-11.nopadding.margin-bottom-10
+            input(type="text", class="form-control", id="m", autocomplete="off")
+          .col-xs-2.col-sm-1.col-md-1.col-lg-1.nopadding
+            button(type="submit", class="btn btn-info btn-send") Send
+        .row-fluid
+          .col-xs-6.col-sm-4.col-md-4.col-lg-4.nopadding
+            input(type="file", class="form-control", id="m", autocomplete="off")
+          .col-xs-3.col-sm-2.col-md-2.col-lg-1.nopadding
+            button(type="submit", class="btn btn-info btn-send", id="file-send") Send file
+        
+    script.
+      var userName = "#{user.username}";
+      var roomId = "#{room._id}";
+      var room = !{JSON.stringify(room)};
+      var roomHistory = !{JSON.stringify(room.messages.slice(-30))};
+    script(src="/javascripts/room.js")
+    script(src="/socket.io/socket.io.js")
+    script(src="/javascripts/delivery.js")

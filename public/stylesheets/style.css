@@ -1,0 +1,57 @@
+body {
+  padding: 15px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.username {
+  color: #7b00ff;
+}
+
+.badge {
+  margin-left: 4px;
+}
+
+.new-room-error-message {
+  color: red;
+  border: 1px dotted red;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.login-error {
+  color: red;
+  text-align: center;
+  padding: 4px;
+  border: 1px dotted red;
+}
+
+.message-container {
+  height: 420px;
+  max-height: 420px;
+  overflow-y: scroll;
+}
+
+.timestamp {
+  color: #5F5F5F; font-size: 12px;
+}
+
+.nopadding {
+  padding: 0 !important;
+}
+
+.btn-send {
+  width: 100%;
+}
+
+.margin-bottom-10 {
+  margin-bottom: 10px;
+}
+
+#messages { list-style-type: none; margin: 0; padding: 0; }
+#messages li { padding: 5px 10px; }
+.user-name { font-weight: bold; }
+li.system-message { font-style: italic; color: #5F5F5F; font-size: 12px;}

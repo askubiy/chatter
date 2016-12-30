@@ -1,0 +1,48 @@
+doctype html
+html
+  head
+    title Chatter
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', rel='stylesheet', media='screen')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='https://code.jquery.com/jquery-1.10.2.min.js')
+    script(src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    script(src='/javascripts/date-and-time.min.js')
+  body
+    nav.navbar.navbar-default
+      .container-fluid
+        .navbar-header
+          button(id="content", class="navbar-toggle collapsed", type="button",
+            data-toggle="collapse", data-target="#bs-example-navbar-collapse-1",
+            aria-expanded="false")
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a(class="navbar-brand" href="/") Chatter
+        
+        div(class="collapse navbar-collapse" id="bs-example-navbar-collapse-1")
+          ul.nav.navbar-nav.navbar-right
+            if (!user)
+              li
+                a(href="/login") Login
+              li
+                a(href="/register") Register
+            if (user)
+              li
+                a(href="/rooms") Rooms
+              li.active
+                a(href="#") Logged in as 
+                  span.username #{user.username}
+                span.sr-only (current)
+              li
+                a(href="/logout") Logout
+            
+    .error-message
+      if (error && error.length > 0)
+        br
+        h4.error-msg= error
+        br
+    .main
+      block content
+

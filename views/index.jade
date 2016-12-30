@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  .container
+    h4 Welcome to Chatter v.0.1
+    if (!user)
+      p You are not authorized, please 
+        a(href="/login") login 
+        | or 
+        a(href="/register") register 
+        | to continue
+    img(class="img-responsive img-rounded", src="/images/fl.jpg", alt="Falliot")
